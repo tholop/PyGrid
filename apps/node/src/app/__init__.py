@@ -162,6 +162,7 @@ def create_app(node_id: str, debug=False, n_replica=None, test_config=None) -> F
         main_routes,
         model_centric_routes,
         ws,
+        # ws_arrow,
     )
 
     # set_node_id(id)
@@ -175,6 +176,7 @@ def create_app(node_id: str, debug=False, n_replica=None, test_config=None) -> F
     app.register_blueprint(data_centric_routes, url_prefix=r"/data-centric")
 
     sockets.register_blueprint(ws, url_prefix=r"/")
+    # sockets.register_blueprint(ws_arrow, url_prefix=r"/arrow")
 
     # Set SQLAlchemy configs
     set_database_config(app, test_config=test_config)

@@ -15,6 +15,7 @@ main_routes = Blueprint("main", __name__)
 model_centric_routes = Blueprint("model-centric", __name__)
 data_centric_routes = Blueprint("data-centric", __name__)
 ws = Blueprint(r"ws", __name__)
+# ws_arrow = Blueprint(r"ws_arrow", __name__)
 
 from . import events, routes
 from .data_centric import auth

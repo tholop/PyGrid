@@ -53,7 +53,10 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "--id", type=str, help="PyGrid Node ID.", default=os.environ.get("NODE_ID", None),
+    "--id",
+    type=str,
+    help="PyGrid Node ID.",
+    default=os.environ.get("NODE_ID", None),
 )
 
 parser.set_defaults(use_test_config=False)
@@ -86,6 +89,7 @@ if __name__ == "__main__":
         (args.host, args.port), app, handler_class=WebSocketHandler
     )
     server.serve_forever()
+
 else:
     node_id = os.environ.get("NODE_ID", None)
     num_replicas = os.environ.get("N_REPLICAS", None)

@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/Users/cereallarceny/.pyenv/versions/3.7.5/bin/python"
+"python.pythonPath": "/Users/cereallarceny/.pyenv/versions/3.7.5/bin/python",
+"jupyter.jupyterServerType": "local"
 }
