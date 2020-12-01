@@ -9,6 +9,8 @@ import sys
 import json
 import requests
 
+import logging
+
 from gevent import pywsgi
 from geventwebsocket.handler import WebSocketHandler
 
@@ -88,7 +90,10 @@ if __name__ == "__main__":
     server = pywsgi.WSGIServer(
         (args.host, args.port), app, handler_class=WebSocketHandler
     )
+    logging.info("starting server")
     server.serve_forever()
+    logging.info("Never reached?")
+
 
 else:
     node_id = os.environ.get("NODE_ID", None)
@@ -102,5 +107,6 @@ else:
                 {"node-id": node_id, "node-address": "{}".format(_address)}
             ),
         )
+    logging.info("else starting server")
 
     app = create_app(node_id=node_id, debug=False, n_replica=num_replicas)
